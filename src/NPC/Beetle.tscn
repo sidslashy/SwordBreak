@@ -1,0 +1,296 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://src/NPC/NPC.gd" type="Script" id=1]
+[ext_resource path="res://asset/sound/Man_Attacked.wav" type="AudioStream" id=2]
+[ext_resource path="res://asset/sound/Arrow_Shot.wav" type="AudioStream" id=3]
+[ext_resource path="res://src/Abilities/HealthBar.tscn" type="PackedScene" id=4]
+[ext_resource path="res://asset/beetle/arrow_shot_sheet.png" type="Texture" id=5]
+[ext_resource path="res://asset/beetle/beetle_shoot_sheet.png" type="Texture" id=6]
+[ext_resource path="res://src/Abilities/Sheild.tscn" type="PackedScene" id=7]
+[ext_resource path="res://asset/beetle/beetle_hit_sheet.png" type="Texture" id=8]
+[ext_resource path="res://asset/combo_magic_sheet.png" type="Texture" id=9]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 41.0191, 18.4485 )
+
+[sub_resource type="Animation" id=2]
+
+resource_name = "hit"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 8 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 9 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 8 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("projectile:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=3]
+
+resource_name = "idle"
+length = 1.5
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 6 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 31 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 30 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("projectile:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 1, 1.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 14 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("projectile:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("projectileHit:texture")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 9 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("projectileHit:hframes")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 15 ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("projectileHit:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 1.2, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("projectileHit:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 1.2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 378.015, -422.117 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("projectileHit:frame")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 1.2, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 14 ]
+}
+
+[node name="Beetle" type="Area2D" index="0"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="audio_hit" type="AudioStreamPlayer2D" parent="." index="0"]
+
+stream = ExtResource( 2 )
+volume_db = 0.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="audio" type="AudioStreamPlayer2D" parent="." index="1"]
+
+stream = ExtResource( 3 )
+volume_db = 0.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="HealthBar" parent="." index="2" instance=ExtResource( 4 )]
+
+position = Vector2( 12.3585, -226.712 )
+z_index = 1
+_sections_unfolded = [ "Animation", "Region", "Transform", "Visibility", "Z Index" ]
+
+[node name="projectile" type="Sprite" parent="." index="3"]
+
+visible = false
+position = Vector2( 237.6, -264.669 )
+rotation = 0.402025
+texture = ExtResource( 5 )
+hframes = 15
+_sections_unfolded = [ "Animation", "Offset", "Visibility" ]
+
+[node name="Sprite" type="Sprite" parent="." index="4"]
+
+texture = ExtResource( 6 )
+hframes = 31
+_sections_unfolded = [ "Animation" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="5"]
+
+position = Vector2( 49.657, 41.327 )
+scale = Vector2( 1, 1.18288 )
+shape = SubResource( 1 )
+
+[node name="Sheild" parent="." index="6" instance=ExtResource( 7 )]
+
+visible = false
+position = Vector2( 39.8566, -4.15327 )
+scale = Vector2( 1.3, 1.3 )
+_sections_unfolded = [ "Animation", "Transform", "Visibility" ]
+
+[node name="CollisionShape2D" parent="Sheild/sheild" index="0"]
+
+position = Vector2( -7.07223, -69.7474 )
+
+[node name="anim" type="AnimationPlayer" parent="." index="7"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/hit = SubResource( 2 )
+anims/idle = SubResource( 3 )
+blend_times = [  ]
+
+[node name="projectileHit" type="Sprite" parent="." index="8"]
+
+visible = false
+position = Vector2( 378.015, -422.117 )
+texture = ExtResource( 9 )
+hframes = 15
+_sections_unfolded = [ "Animation", "Transform", "Visibility" ]
+
+[connection signal="animation_changed" from="anim" to="." method="_on_anim_animation_changed"]
+
+[connection signal="animation_finished" from="anim" to="." method="_on_anim_animation_finished"]
+
+[connection signal="animation_started" from="anim" to="." method="_on_anim_animation_started"]
+
+
+[editable path="Sheild"]

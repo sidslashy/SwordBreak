@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://asset/string_circle-sheet.png" type="Texture" id=1]
+[ext_resource path="res://src/UI/Note.gd" type="Script" id=2]
+
+[node name="Note" type="Sprite"]
+
+texture = ExtResource( 1 )
+hframes = 2
+script = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+note_key = "1"
+note_row = "1"
+
+[node name="Timer" type="Timer" parent="." index="0"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+
+

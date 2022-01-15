@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Succes_Theme.wav-3a7260ebf68418a735c03d022e4e2fdb.sample"
+
+[deps]
+
+source_file="res://asset/sound/Succes_Theme.wav"
+dest_files=[ "res://.import/Succes_Theme.wav-3a7260ebf68418a735c03d022e4e2fdb.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Man_Attacked.wav-518ee3ccd83c6b83bc07d5c885ce3385.sample"
+
+[deps]
+
+source_file="res://asset/sound/Man_Attacked.wav"
+dest_files=[ "res://.import/Man_Attacked.wav-518ee3ccd83c6b83bc07d5c885ce3385.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

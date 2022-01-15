@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/shami9.wav-05464a3b9097f8795c358b2223b9c764.sample"
+
+[deps]
+
+source_file="res://asset/sound/chordes/shami9.wav"
+dest_files=[ "res://.import/shami9.wav-05464a3b9097f8795c358b2223b9c764.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,184 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://src/Boss/Sword.gd" type="Script" id=1]
+[ext_resource path="res://asset/Sword/sword_stuck_sheet.png" type="Texture" id=2]
+[ext_resource path="res://asset/Sword/sword_selected.png" type="Texture" id=3]
+[ext_resource path="res://asset/indicator_sheet.png" type="Texture" id=4]
+[ext_resource path="res://asset/sound/sword_break.wav" type="AudioStream" id=5]
+[ext_resource path="res://asset/sound/Succes_Theme.wav" type="AudioStream" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 16.3368, 72.1355 )
+
+[sub_resource type="Animation" id=2]
+
+resource_name = "show"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("indicator:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 28 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("indicator:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=3]
+
+resource_name = "sword_break"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("sword:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 31 ]
+}
+
+[sub_resource type="Animation" id=4]
+
+resource_name = "sword_found"
+length = 1.5
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("sword:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 12 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("indicator:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("indicator:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.2, 1.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 28 ]
+}
+
+[node name="Sword" type="Area2D"]
+
+z_index = 7
+z_as_relative = false
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+id = 0
+
+[node name="sword" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 2 )
+hframes = 32
+_sections_unfolded = [ "Animation" ]
+
+[node name="highlight" type="Sprite" parent="." index="1"]
+
+visible = false
+texture = ExtResource( 3 )
+
+[node name="indicator" type="Sprite" parent="." index="2"]
+
+visible = false
+position = Vector2( 6.71869, -60.4684 )
+texture = ExtResource( 4 )
+hframes = 29
+_sections_unfolded = [ "Animation", "Region", "Visibility" ]
+
+[node name="collider" type="CollisionShape2D" parent="." index="3"]
+
+position = Vector2( 3.26041, 89.7021 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="anim" type="AnimationPlayer" parent="." index="4"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/show = SubResource( 2 )
+anims/sword_break = SubResource( 3 )
+anims/sword_found = SubResource( 4 )
+blend_times = [  ]
+
+[node name="sword_break" type="AudioStreamPlayer2D" parent="." index="5"]
+
+stream = ExtResource( 5 )
+volume_db = 0.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="win_music" type="AudioStreamPlayer" parent="." index="6"]
+
+stream = ExtResource( 6 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[connection signal="area_entered" from="." to="." method="_on_Sword_area_entered"]
+
+[connection signal="area_exited" from="." to="." method="_on_Sword_area_exited"]
+
+[connection signal="animation_finished" from="anim" to="." method="_on_anim_animation_finished"]
+
+

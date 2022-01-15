@@ -1,0 +1,233 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://src/UI/AbilityBar.gd" type="Script" id=1]
+[ext_resource path="res://asset/block.png" type="Texture" id=2]
+[ext_resource path="res://asset/timer_sheet.png" type="Texture" id=3]
+[ext_resource path="res://asset/block_sheet.png" type="Texture" id=4]
+[ext_resource path="res://asset/indicator_sheet.png" type="Texture" id=5]
+
+[sub_resource type="Animation" id=1]
+
+resource_name = "cooldown"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("cooldown:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 44, 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("duration:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("cooldown:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=3]
+
+resource_name = "notify"
+length = 1.0
+loop = false
+step = 0.1
+
+[sub_resource type="Animation" id=6]
+
+resource_name = "skill_duration"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("duration:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 44 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("duration:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("cooldown:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("duration_overlay:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 41 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("duration_overlay:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=7]
+
+resource_name = "notifier"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("notifier:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("notifier:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 28 ]
+}
+
+[node name="AbilityBar" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+cooldown_speed = 1.0
+ability_duration = 1.0
+
+[node name="ability" type="Sprite" parent="." index="0"]
+
+visible = false
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="cooldown" type="Sprite" parent="." index="1"]
+
+visible = false
+modulate = Color( 0, 0.78598, 0.996094, 0.60498 )
+position = Vector2( 3.27732, -9.951 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 3 )
+hframes = 45
+_sections_unfolded = [ "Animation", "Transform", "Visibility", "Z Index" ]
+
+[node name="duration" type="Sprite" parent="." index="2"]
+
+visible = false
+position = Vector2( 3.27732, -9.951 )
+scale = Vector2( 0.933761, 0.933761 )
+texture = ExtResource( 3 )
+hframes = 45
+frame = 44
+_sections_unfolded = [ "Animation", "Visibility", "Z Index" ]
+
+[node name="duration_overlay" type="Sprite" parent="." index="3"]
+
+visible = false
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 4 )
+hframes = 42
+frame = 41
+_sections_unfolded = [ "Animation", "Transform", "Visibility" ]
+
+[node name="anim" type="AnimationPlayer" parent="." index="4"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/cooldown = SubResource( 1 )
+anims/notify = SubResource( 3 )
+anims/skill_duration = SubResource( 6 )
+blend_times = [  ]
+_sections_unfolded = [ "Playback Options" ]
+
+[node name="notifier" type="Sprite" parent="." index="5"]
+
+visible = false
+scale = Vector2( 1.2, 1.2 )
+texture = ExtResource( 5 )
+hframes = 29
+frame = 28
+_sections_unfolded = [ "Animation", "Transform", "Visibility" ]
+
+[node name="notifierPlayer" type="AnimationPlayer" parent="." index="6"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/notifier = SubResource( 7 )
+blend_times = [  ]
+
+[connection signal="animation_finished" from="anim" to="." method="_on_animation_finished"]
+
+

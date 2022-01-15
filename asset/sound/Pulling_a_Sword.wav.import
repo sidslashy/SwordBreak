@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Pulling_a_Sword.wav-ef768084dd755b864be732851da69825.sample"
+
+[deps]
+
+source_file="res://asset/sound/Pulling_a_Sword.wav"
+dest_files=[ "res://.import/Pulling_a_Sword.wav-ef768084dd755b864be732851da69825.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

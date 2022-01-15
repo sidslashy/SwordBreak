@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://asset/floor.png" type="Texture" id=1]
+[ext_resource path="res://asset/floor2.png" type="Texture" id=2]
+[ext_resource path="res://asset/floor_over.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 1097.38, 46.5479 )
+
+[node name="Ground" type="StaticBody2D"]
+
+position = Vector2( 956.833, 1020.78 )
+z_index = 10
+z_as_relative = false
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Z Index" ]
+
+[node name="ground" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="Sprite" type="Sprite" parent="." index="1"]
+
+position = Vector2( 16.9424, -84.7188 )
+texture = ExtResource( 2 )
+
+[node name="Sprite2" type="Sprite" parent="." index="2"]
+
+position = Vector2( -3.57581, -62.8772 )
+z_index = 20
+z_as_relative = false
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
+
+position = Vector2( 0, -19 )
+shape = SubResource( 1 )
+
+

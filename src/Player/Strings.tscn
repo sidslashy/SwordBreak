@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/Player/Strings.gd" type="Script" id=1]
+[ext_resource path="res://src/UI/String.tscn" type="PackedScene" id=2]
+
+[node name="Strings" type="Node2D"]
+
+script = ExtResource( 1 )
+
+[node name="String1" parent="." index="0" instance=ExtResource( 2 )]
+
+[node name="String2" parent="." index="1" instance=ExtResource( 2 )]
+
+position = Vector2( 961.456, 846.295 )
+
+[node name="String3" parent="." index="2" instance=ExtResource( 2 )]
+
+position = Vector2( 961.456, 904.343 )
+
+

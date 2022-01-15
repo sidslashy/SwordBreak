@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Boss_Attack_2_-_Grab,_Dry_Bones.wav-5ee70371fe80cb6476690a43be108a78.sample"
+
+[deps]
+
+source_file="res://asset/sound/Boss_Attack_2_-_Grab,_Dry_Bones.wav"
+dest_files=[ "res://.import/Boss_Attack_2_-_Grab,_Dry_Bones.wav-5ee70371fe80cb6476690a43be108a78.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

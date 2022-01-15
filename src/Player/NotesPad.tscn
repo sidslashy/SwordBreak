@@ -1,0 +1,149 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://src/UI/Note.tscn" type="PackedScene" id=1]
+[ext_resource path="res://asset/sound/chordes/shami7.wav" type="AudioStream" id=2]
+[ext_resource path="res://asset/sound/chordes/shami8.wav" type="AudioStream" id=3]
+[ext_resource path="res://asset/sound/chordes/shami9.wav" type="AudioStream" id=4]
+[ext_resource path="res://asset/sound/chordes/shami4.wav" type="AudioStream" id=5]
+[ext_resource path="res://asset/sound/chordes/shami5.wav" type="AudioStream" id=6]
+[ext_resource path="res://asset/sound/chordes/shami6.wav" type="AudioStream" id=7]
+[ext_resource path="res://asset/sound/chordes/shami1.wav" type="AudioStream" id=8]
+[ext_resource path="res://asset/sound/chordes/shami2.wav" type="AudioStream" id=9]
+[ext_resource path="res://asset/sound/chordes/shami3.wav" type="AudioStream" id=10]
+
+[node name="NotesPad" type="Node2D"]
+
+editor/display_folded = true
+
+[node name="Note7" parent="." index="0" instance=ExtResource( 1 )]
+
+editor/display_folded = true
+position = Vector2( 1665.38, 767.879 )
+note_key = "7"
+
+[node name="sound" type="AudioStreamPlayer" parent="Note7" index="1"]
+
+stream = ExtResource( 2 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Note8" parent="." index="1" instance=ExtResource( 1 )]
+
+editor/display_folded = true
+position = Vector2( 1735.73, 769.021 )
+note_key = "8"
+
+[node name="sound" type="AudioStreamPlayer" parent="Note8" index="1"]
+
+stream = ExtResource( 3 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Note9" parent="." index="2" instance=ExtResource( 1 )]
+
+editor/display_folded = true
+position = Vector2( 1808.5, 769.021 )
+note_key = "9"
+
+[node name="sound" type="AudioStreamPlayer" parent="Note9" index="1"]
+
+stream = ExtResource( 4 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Note4" parent="." index="3" instance=ExtResource( 1 )]
+
+editor/display_folded = true
+position = Vector2( 1664.93, 827.92 )
+note_key = "4"
+note_row = "2"
+
+[node name="sound" type="AudioStreamPlayer" parent="Note4" index="1"]
+
+stream = ExtResource( 5 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Note5" parent="." index="4" instance=ExtResource( 1 )]
+
+editor/display_folded = true
+position = Vector2( 1736.18, 828.647 )
+note_key = "5"
+note_row = "2"
+
+[node name="sound" type="AudioStreamPlayer" parent="Note5" index="1"]
+
+stream = ExtResource( 6 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Note6" parent="." index="5" instance=ExtResource( 1 )]
+
+editor/display_folded = true
+position = Vector2( 1808.96, 828.647 )
+note_key = "6"
+note_row = "2"
+
+[node name="sound" type="AudioStreamPlayer" parent="Note6" index="1"]
+
+stream = ExtResource( 7 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Note1" parent="." index="6" instance=ExtResource( 1 )]
+
+editor/display_folded = true
+position = Vector2( 1664.17, 888.577 )
+note_row = "3"
+
+[node name="sound" type="AudioStreamPlayer" parent="Note1" index="1"]
+
+stream = ExtResource( 8 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Note2" parent="." index="7" instance=ExtResource( 1 )]
+
+editor/display_folded = true
+position = Vector2( 1735.41, 889.304 )
+note_key = "2"
+note_row = "3"
+
+[node name="sound" type="AudioStreamPlayer" parent="Note2" index="1"]
+
+stream = ExtResource( 9 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Note3" parent="." index="8" instance=ExtResource( 1 )]
+
+editor/display_folded = true
+position = Vector2( 1808.75, 888.747 )
+note_key = "3"
+note_row = "3"
+
+[node name="sound" type="AudioStreamPlayer" parent="Note3" index="1"]
+
+stream = ExtResource( 10 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+

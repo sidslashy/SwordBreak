@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Wings_Flapping_(loop).wav-32a89fe6ec0ef458885392de41b17bbc.sample"
+
+[deps]
+
+source_file="res://asset/sound/Wings_Flapping_(loop).wav"
+dest_files=[ "res://.import/Wings_Flapping_(loop).wav-32a89fe6ec0ef458885392de41b17bbc.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

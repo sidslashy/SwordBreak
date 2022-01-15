@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/Abilities/RockSpawner.gd" type="Script" id=1]
+[ext_resource path="res://src/Boss/Rock.tscn" type="PackedScene" id=2]
+
+[node name="RockSpawner" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+ROCK = ExtResource( 2 )
+rock_spawn_time = 1
+
+[node name="Timer" type="Timer" parent="." index="0"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="Position2D" type="Position2D" parent="." index="1"]
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+
+

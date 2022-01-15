@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Lose_Theme.wav-258a1778591e255a7d5be4c3ad68f8a4.sample"
+
+[deps]
+
+source_file="res://asset/sound/Lose_Theme.wav"
+dest_files=[ "res://.import/Lose_Theme.wav-258a1778591e255a7d5be4c3ad68f8a4.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
